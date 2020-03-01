@@ -1,10 +1,11 @@
 <?php
 // wikipediaのh1を取得
 require_once("./phpQuery-onefile.php");
-$html = file_get_contents("https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%83%96%E3%82%B9%E3%82%AF%E3%83%AC%E3%82%A4%E3%83%94%E3%83%B3%E3%82%B0");
+$html = file_get_contents("https://ja.wikipedia.org/wiki/LINE_(%E4%BC%81%E6%A5%AD)");
 $message=phpQuery::newDocument($html)->find("h1")->text();
 
-$token = 'aUSbEuyw0BJuw6XrfMB5DPNUkr8grcMf2TW5g2vw9nj';
+// トークンのベタ打ちはセキュリティ上、良くない
+$token = '各トークンの入力';
 
 // リクエストヘッダの作成
 $query = http_build_query(['message' => $message]);
